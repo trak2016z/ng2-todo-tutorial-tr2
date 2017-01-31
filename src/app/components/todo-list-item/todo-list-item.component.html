@@ -1,15 +1,11 @@
-<code>todo-list-item (id: {{id}}, completed: {{completed}}, name: "{{name}}")</code>
-
 <li [class.completed]="completed">
 	<div class="view">
-	 <input
+	 <input 
 	   class="toggle"
-	   type="checkbox"
+	   type="checkbox" 
 	   (click)="emitCheckboxClick()"
 	   [ngModel]="completed">
 	 <label>{{name}}</label>
 	 <button class="destroy" (click)="emitDestroyBtnClick()"></button>
 	</div>
 </li>
-
-

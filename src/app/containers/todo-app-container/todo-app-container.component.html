@@ -1,0 +1,15 @@
+<todo-input placeholder="What needs to be done?"></todo-input>
+
+<ul class="todo-list">
+  <todo-list-item
+    *ngFor="let todo of todos; let index = index"
+    [id]="index"
+    [name]="todo.name"
+    [completed]="todo.completed">
+  </todo-list-item>
+</ul>
+
+<todo-summary
+  [itemsLeft]="completedTodosCount"
+  [showClearButton]="hasCompletedTodos">
+</todo-summary>

@@ -1,16 +1,4 @@
 <section class="todoapp">
 <h1>todos</h1>
-
-<todo-input placeholder="What needs to be done?"></todo-input>
-
-<ul class="todo-list">
-  <todo-list-item id=1 name="1 task" [completed]="false"></todo-list-item>
-  <todo-list-item id=2 name="2 task" [completed]="true"></todo-list-item>
-  <todo-list-item id=3 name="3 task" [completed]="false"></todo-list-item>
-</ul>
-
-<todo-summary itemsLeft=3 [showClearButton]="false"></todo-summary>
-<todo-summary itemsLeft=0 [showClearButton]="true"></todo-summary>
-<todo-summary itemsLeft=1 [showClearButton]="false"></todo-summary>
-
+<todo-app-container></todo-app-container>
 </section>
