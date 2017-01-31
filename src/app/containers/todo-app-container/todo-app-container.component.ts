@@ -12,8 +12,6 @@ interface ITodo {
 })
 export class TodoAppContainerComponent {
 
-
-  /* Te dane mogą pochodzić z API */
   public todos: ITodo[] = [
     { completed: false, name: 'Finish project' },
     { completed: false, name: 'Go to the gym' },
@@ -29,6 +27,22 @@ export class TodoAppContainerComponent {
   public get hasCompletedTodos(): boolean {
     return this.todos
       .some(todo => todo.completed)
+  }
+
+  public handleDestroyClick(x) {
+    console.log('Destroy', x)
+  }
+
+  public handleCheckboxClick(x) {
+    console.log('Checkbox', x)
+  }
+
+  public handleClearBtnClick(x) {
+    console.log('Clear button')
+  }
+
+  public handleNewInputValue(x) {
+    console.log('New input value', x)
   }
 
 }

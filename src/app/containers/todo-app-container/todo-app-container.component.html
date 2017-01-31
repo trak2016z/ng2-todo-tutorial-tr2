@@ -1,15 +1,18 @@
-<todo-input placeholder="What needs to be done?"></todo-input>
+<todo-input placeholder="What needs to be done?" (newInputValue)="addNewTodo($event)"></todo-input>
 
 <ul class="todo-list">
   <todo-list-item
     *ngFor="let todo of todos; let index = index"
     [id]="index"
     [name]="todo.name"
-    [completed]="todo.completed">
+    [completed]="todo.completed"
+    (destroyBtnClick)="destroyTodo($event)"
+    (checkboxClick)="changeTodo($event)">
   </todo-list-item>
 </ul>
 
 <todo-summary
   [itemsLeft]="completedTodosCount"
-  [showClearButton]="hasCompletedTodos">
+  [showClearButton]="hasCompletedTodos"
+  (clearButtonClick)="destroyCompletedTodos()">
 </todo-summary>
