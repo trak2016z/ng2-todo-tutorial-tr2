@@ -1,0 +1,7 @@
+<code>todo-input</code>
+<input 
+  #input
+  autofocus
+  class="new-todo"
+  [placeholder]="placeholder"
+  (keyup.enter)="emitInputValueAndClear(input)">

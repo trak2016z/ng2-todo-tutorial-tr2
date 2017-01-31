@@ -1,0 +1,10 @@
+<code>todo-summary</code>
+
+<footer class="footer">
+  <span class="todo-count">
+    <strong>{{itemsLeft}}</strong> {{itemsLeftText}}
+  </span>
+  <button *ngIf="showClearButton" (click)="clearButtonClick.emit()" class="clear-completed">
+      Clear completed
+  </button>
+</footer>
