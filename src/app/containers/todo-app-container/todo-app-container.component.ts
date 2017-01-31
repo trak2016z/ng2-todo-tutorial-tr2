@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface ITodo {
   completed: boolean
@@ -29,20 +29,25 @@ export class TodoAppContainerComponent {
       .some(todo => todo.completed)
   }
 
-  public handleDestroyClick(x) {
-    console.log('Destroy', x)
+  public destroyTodo(todoIndex: number) {
+    this.todos = this.todos
+      .filter((todo, index) => index !== todoIndex)
   }
 
-  public handleCheckboxClick(x) {
-    console.log('Checkbox', x)
+  public changeTodo(todoIndex: number) {
+    this.todos = this.todos
+      .map((todo, index) => index !== todoIndex ? todo : Object.assign({}, todo, {
+        completed: !todo.completed
+      }))
   }
 
-  public handleClearBtnClick(x) {
-    console.log('Clear button')
+  public destroyCompletedTodos() {
+    this.todos = this.todos
+      .filter(todo => !todo.completed)
   }
 
-  public handleNewInputValue(x) {
-    console.log('New input value', x)
+  public addNewTodo(todoName: string) {
+    this.todos = [...this.todos, { completed: false, name: todoName }] as ITodo[]
   }
 
 }
