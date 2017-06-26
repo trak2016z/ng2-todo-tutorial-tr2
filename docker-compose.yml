@@ -1,0 +1,30 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx
+    volumes:
+      - todoshared:/usr/src/app
+    ports:
+      - 80:80
+    container_name: todonginx
+  node8:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.node8
+    command: npm run build
+    container_name: todoprod
+    volumes:
+      - todoshared:/usr/src/app
+  node8dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.node8
+    ports:  
+      - 4200:4200
+    container_name: tododev 
+    command: npm start
+
+volumes:
+  todoshared:

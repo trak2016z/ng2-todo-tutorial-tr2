@@ -1,0 +1,6 @@
+FROM nginx:latest
+RUN rm -rf /etc/nginx/conf.d/*
+WORKDIR /usr/src/app
+
+COPY nginx/default.conf /etc/nginx/conf.d
+EXPOSE 80
